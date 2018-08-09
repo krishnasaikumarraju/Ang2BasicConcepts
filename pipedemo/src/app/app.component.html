@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div >
+  My Name is : {{myname | uppercase}}
+  <br><br>
+  My DOB is : {{mydob | date: preformat}}
+  <br><br>
+  My age is : {{myage}}
+  <br><br>
+  My salary is : {{mysalary | currency}}
+  <br><br>
+  <table>
+    <tr>
+      <th (click)="changeSortOrder('I')">ID</th>
+      <br><br>
+      <th (click)="changeSortOrder('N')">NAME</th>
+      <br><br>
+      <th (click)="changeSortOrder('A')">AGE</th>
+      <br><br>
+
+    </tr>
+    <tr *ngFor="let e of emps | orderBy: currentOrderField :true">
+      <td>{{e.id}}</td><br><br>
+      <td>{{e.name | salute}}</td><br><br>
+      <td>{{e.age | agetr}}</td><br><br>
+    </tr>
+  </table>
+  <br><br>
+  <span *ngFor="let p of prices | cutoff : 5000">{{p}}</span>
+</div>
+
